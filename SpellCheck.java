@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.TreeSet;
 
 /**
    This program checks which words in a file are not present in a dictionary.
@@ -37,7 +38,7 @@ public class SpellCheck
    public static Set<String> readWords(String filename)
       throws FileNotFoundException
    {
-      Set<String> words = new HashSet<>();
+      Set<String> words = new TreeSet<>();
       Scanner in = new Scanner(new File(filename));
       // Use any characters other than a-z or A-Z as delimiters
       in.useDelimiter("[^a-zA-Z]+");

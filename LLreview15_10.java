@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 import java.util.ListIterator;
-
+import java.util.Set;
 
 /**
  * Write a description of class LLreview15_10 here.
@@ -12,6 +12,7 @@ public class LLreview15_10
 {
      public static void main(String[] args)
    {
+       /*
        LinkedList<String> staff = new LinkedList<>();
        ListIterator<String> iterator = staff.listIterator(); 
        iterator.add("Thomas");
@@ -33,6 +34,9 @@ public class LLreview15_10
       
       for(String name : staff){
           System.out.println(name);
+          */
+      Set<Integer> numbers = new Set<>();
+      
         }
    }
 }
