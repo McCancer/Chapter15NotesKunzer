@@ -49,9 +49,9 @@ public class Driveway
       // Complete this method
       Integer x = 0;
       Integer Plate = licensePlate;
-      while(x != Plate){
+      while(x.equals(Plate) != true ){
           x = driveway.pop();
-           if (x != Plate){
+           if (x.equals(Plate)!= true){
                street.push(x);
             }
         }
@@ -68,15 +68,15 @@ public class Driveway
    {
       System.out.println("In Driveway, starting at first in (one license plate per line):");
       // Print the cars in the driveway here
-      while(driveway.size() > 0){
+      
           System.out.print(driveway);
-        }
+        
 
-      System.out.println("In Street, starting at first in (one license plate per line):");
+      System.out.println("\nIn Street, starting at first in (one license plate per line):");
       // Print the cars in the street here
-      while(street.size() > 0){
-          System.out.print(street);
-        }
+      
+          System.out.print(street + "\n");
+        
 
    }
 }
