@@ -1,7 +1,7 @@
 /**
    This class encapsulates a work order with a priority.
 */
-public class WorkOrder implements Comparable 
+public class WorkOrder implements Comparable  
 {
 
    private char priority;
@@ -34,11 +34,19 @@ public class WorkOrder implements Comparable
    */
    public int compareTo(Object otherObj){
       WorkOrder other =(WorkOrder)otherObj;
-      if (this.priority == 'd' && other.priority >=2 ){return 1;}
-      else if(this.priority == 'w' && other.priority >= 3){return 1;}
-      else if(this.priority == 'm'){return -1;}
+      
+      if (this.priority == 100 && other.priority > 49){return 1;}//d
+      
+      else if (this.priority == '1' && other.priority == 100){return -1;}
+      
+      else if(this.priority == 119 && other.priority > 50){return 1;}//w
+      
+      else if ((this.priority == '1' || this .priority == '2') && other.priority == 119){return -1;}
+      
+      else if(this.priority == 77){return -1;} //m
+      
       else if (this.priority < other.priority){return -1;}
-      else if(priority > other.priority){return 1;}
+      else if(this.priority > other.priority){return 1;}
       else {return 0;}
     }
 
