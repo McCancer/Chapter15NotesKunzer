@@ -35,19 +35,27 @@ public class WorkOrder implements Comparable
    public int compareTo(Object otherObj){
       WorkOrder other =(WorkOrder)otherObj;
       
-      if (this.priority == 100 && other.priority > 49){return 1;}//d
-      
-      else if (this.priority == '1' && other.priority == 100){return -1;}
-      
-      else if(this.priority == 119 && other.priority > 50){return 1;}//w
-      
-      else if ((this.priority == '1' || this .priority == '2') && other.priority == 119){return -1;}
-      
-      else if(this.priority == 77){return -1;} //m
+      if (this.priority == 'd' ){
+          if(other.priority == '1'){
+              return 1;
+            }
+          else if(other.priority != '1'){
+             return -1; 
+            }
+          else
+            return 0;
+        } 
+      else if(this.priority == 'w'){
+          if(other.priority == '1' || other.priority == '2'|| other.priority == 'd' || other.priority =='m'){
+              return 1;
+            }
+          else 
+              return -1;
+        }
+      else if(this.priority == 'm'){return -1;} //m
       
       else if (this.priority < other.priority){return -1;}
       else if(this.priority > other.priority){return 1;}
       else {return 0;}
     }
-
 }//End of Work order

@@ -16,11 +16,7 @@ public class PracticeProgram_E11
      TODOLIST.add(new WorkOrder('w',"Call Grandmother"));
      TODOLIST.add(new WorkOrder('1',"Update Computer System"));
      TODOLIST.add(new WorkOrder('4',"Help Dad"));
-     TODOLIST.add(new WorkOrder('d',"Play Magic the Gathering"));
-     
-     char a = '1';
-     char b = 'w';
-     System.out.println(this.priority == 100 && other.priority > 49) && b== 119);
+     TODOLIST.add(new WorkOrder('9',"Play Magic the Gathering"));
      
      
      //Creatse two Scanners
