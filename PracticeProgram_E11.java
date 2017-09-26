@@ -15,7 +15,7 @@ public class PracticeProgram_E11
      TODOLIST.add(new WorkOrder('3',"Eat Dinner"));
      TODOLIST.add(new WorkOrder('w',"Call Grandmother"));
      TODOLIST.add(new WorkOrder('1',"Update Computer System"));
-     TODOLIST.add(new WorkOrder('4',"Help Dad"));
+     TODOLIST.add(new WorkOrder('d',"Help Dad"));
      TODOLIST.add(new WorkOrder('9',"Play Magic the Gathering"));
      
      
@@ -37,15 +37,11 @@ public class PracticeProgram_E11
              TODOLIST.add(new WorkOrder(Pri,desc)); // adds it the queue
             }// end of if one
          else if(Choice.toLowerCase().equals("next")){ // sees if you want to move on to the next task
-             TODOLIST.remove();// removes the first task
-             System.out.println("New task is" + TODOLIST.peek()); // Shows you the next task
+             System.out.println(TODOLIST.remove() + " Completed");
             }//end of if 2
-         else if(Choice.toLowerCase().equals("look")){ //sees if you want to see the current task
-              System.out.println("current task is" + TODOLIST.peek()); // Shows you the current task
-            } // end of if 3
          else if(Choice.toLowerCase().equals("quit")){ // sees if you want to quit
              System.out.println("Exiting the Program");// exiting message
-            }//end of if 4
+            }//end of if 3
          else{}//catch
         }// end of while loop
     }//end of main 

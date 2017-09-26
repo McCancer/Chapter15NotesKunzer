@@ -35,25 +35,41 @@ public class WorkOrder implements Comparable
    public int compareTo(Object otherObj){
       WorkOrder other =(WorkOrder)otherObj;
       
-      if (this.priority == 'd' ){
-          if(other.priority == '1'){
+      if (this.priority == 'd' || other.priority == 'd' ){ // sees if it is or other is d
+          if(this.priority =='d' && other.priority == '1'   ){ //if this point is d and other is 1 returns 1
               return 1;
             }
-          else if(other.priority != '1'){
-             return -1; 
-            }
-          else
-            return 0;
-        } 
-      else if(this.priority == 'w'){
-          if(other.priority == '1' || other.priority == '2'|| other.priority == 'd' || other.priority =='m'){
-              return 1;
-            }
-          else 
+          else if(other.priority =='d' && this.priority == '1'){//if other point is d and this is 1 returns -1
               return -1;
+            }
+          else if(this.priority != '1' && other.priority =='d'){ //if this is not 1 and other is d return 1
+              return 1;
+            }
+          else //if this is d and other is not 1 returns -1
+             return -1; 
+        } 
+      else if(this.priority == 'w' || other.priority == 'w'){ //sees if it or other is w
+          if((this.priority == 'w') && other.priority < '3' || other.priority == 'd'){ // if point is w and other is less that three or d return 1
+              return 1;}
+          else if ((other.priority =='w') && this.priority < '3' || this.priority == 'd'){// if other point is w and other is less that three or d return -1
+              return -1;
+            }
+          else if ((other.priority =='w') && this.priority > '3' ){ // if other point is w and this point is greater than 3 return 1
+              return 1;
+            }
+          else // if this point is w and other point is greater than 3 return 1
+             return -1;
         }
-      else if(this.priority == 'm'){return -1;} //m
-      
+      else if(this.priority == 'm' || other.priority == 'm'){//sees if it or other is m
+        if(this.priority =='m'){ // if the point is m then return 1
+            return 1;
+        }
+        else if(other.priority =='m'){ //if the other point is m then return 1
+            return -1;
+        }
+        else return 0; // catch
+        } //if it is m it is smaller than everything
+      //standard compare to method
       else if (this.priority < other.priority){return -1;}
       else if(this.priority > other.priority){return 1;}
       else {return 0;}
